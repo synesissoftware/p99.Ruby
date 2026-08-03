@@ -16,15 +16,15 @@ Low-cost generation of performance percentiles (p50, p90, p99, p99.9, etc.), for
 - [Introduction](#introduction)
 - [Installation](#installation)
 - [Components](#components)
-	- [`P99::Histogram`](#p99histogram)
+  - [`P99::Histogram`](#p99histogram)
 - [Examples](#examples)
 - [Project Information](#project-information)
-	- [Where to get help](#where-to-get-help)
-	- [Contribution guidelines](#contribution-guidelines)
-	- [Dependencies](#dependencies)
-		- [Development Dependencies](#development-dependencies)
-	- [Related projects](#related-projects)
-	- [License](#license)
+  - [Where to get help](#where-to-get-help)
+  - [Contribution guidelines](#contribution-guidelines)
+  - [Dependencies](#dependencies)
+    - [Development Dependencies](#development-dependencies)
+  - [Related projects](#related-projects)
+  - [License](#license)
 
 
 ## Introduction
