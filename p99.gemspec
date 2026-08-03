@@ -24,7 +24,8 @@ Gem::Specification.new do |spec|
   spec.description  = <<END_DESC
 Low-cost generation of performance percentiles (p50, p90, p99, p99.9, etc.), for Ruby.
 
-p99.Ruby is the Ruby implementation of the p99 family of libraries.
+p99.Ruby is the Ruby implementation of the p99 family of libraries. This
+release provides a pure-Ruby Histogram; a C-extension backend is planned.
 END_DESC
   spec.authors      = [ 'Matt Wilson' ]
   spec.email        = 'matthew@synesis.com.au'

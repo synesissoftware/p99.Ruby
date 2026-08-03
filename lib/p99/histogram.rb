@@ -1,8 +1,8 @@
 
 # ######################################################################## #
-# File:     p99/version.rb
+# File:     p99/histogram.rb
 #
-# Purpose:  Version for p99.Ruby library
+# Purpose:  Histogram loader for p99.Ruby (pure Ruby; C extension later)
 #
 # Created:  4th August 2026
 # Updated:  4th August 2026
@@ -49,19 +49,36 @@
 
 module P99
 
-  # Current version of the p99.Ruby library
-  VERSION           = '0.0.1'
+  # Loads the Histogram implementation.
+  #
+  # Prefers a future C extension when present, unless +P99_PURE_RUBY+ is set
+  # in the environment; otherwise falls back to the pure-Ruby implementation.
+  #
+  # @return [String] +"c"+ or +"ruby"+
+  def self.load_histogram_implementation
 
-  private
-  # @!visibility private
-  VERSION_PARTS_    = VERSION.split(/[.]/).collect { |n| n.to_i } # :nodoc:
-  public
-  # Major version of the p99.Ruby library
-  VERSION_MAJOR     = VERSION_PARTS_[0] # :nodoc:
-  # Minor version of the p99.Ruby library
-  VERSION_MINOR     = VERSION_PARTS_[1] # :nodoc:
-  # Revision version of the p99.Ruby library
-  VERSION_REVISION  = VERSION_PARTS_[2] # :nodoc:
+    if ENV['P99_PURE_RUBY']
+
+      require 'p99/histogram/pure'
+
+      return 'ruby'
+    end
+
+    begin
+
+      require 'p99/histogram/ext'
+
+      'c'
+    rescue LoadError
+
+      require 'p99/histogram/pure'
+
+      'ruby'
+    end
+  end
+
+  # Active Histogram backend: +"ruby"+ (current) or +"c"+ (when available).
+  IMPLEMENTATION = load_histogram_implementation
 end # module P99
 
 

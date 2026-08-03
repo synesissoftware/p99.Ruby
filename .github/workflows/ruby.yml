@@ -17,9 +17,11 @@ on:
     branches:
       - "master"
       - "dev"
-      - "gha"
-      - 0_0_0
       - boilerplate
+      - "gha"
+      - "histogram"
+      - 0_0_0
+      - 0_0_1
   pull_request:
 
 permissions:

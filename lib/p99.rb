@@ -54,6 +54,7 @@ end # module P99
 
 
 require 'p99/version'
+require 'p99/histogram'
 
 
 # ############################## end of file ############################# #

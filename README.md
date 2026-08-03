@@ -16,6 +16,8 @@ Low-cost generation of performance percentiles (p50, p90, p99, p99.9, etc.), for
 - [Introduction](#introduction)
 - [Installation](#installation)
 - [Components](#components)
+	- [`P99::Histogram`](#p99histogram)
+- [Examples](#examples)
 - [Project Information](#project-information)
 	- [Where to get help](#where-to-get-help)
 	- [Contribution guidelines](#contribution-guidelines)
@@ -51,7 +53,45 @@ require 'p99'
 
 ## Components
 
-T.B.C.
+
+### `P99::Histogram`
+
+Low-cost, fixed-size histogram for recording event durations (nanoseconds and
+common larger units) and querying high-resolution percentiles (p50, p90, p99,
+and beyond).
+
+This release provides a **pure-Ruby** implementation. A C-extension backend
+(with automatic fallback) is planned.
+
+```Ruby
+require 'p99'
+
+h = P99::Histogram.new
+h.push_event_time_ns(150)
+h.push_event_time_us(5)
+h.push_event_time_ms(10)
+
+h.event_count          # => 3
+h.value_at_p99         # => approximated duration in nanoseconds
+P99::IMPLEMENTATION    # => "ruby" (or "c" when a native backend is present)
+```
+
+Force the pure-Ruby backend (for debugging or CI):
+
+```bash
+P99_PURE_RUBY=1 ruby -e "require 'p99'; puts P99::IMPLEMENTATION"
+```
+
+
+## Examples
+
+See [**EXAMPLES.md**](./EXAMPLES.md) for the full list. The primary
+demonstration is [**build_histogram**](./examples/build_histogram.md):
+
+```bash
+ruby examples/build_histogram.rb
+P99_TRIES=1000 ruby examples/build_histogram.rb
+```
 
 
 ## Project Information

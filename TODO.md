@@ -3,7 +3,7 @@
 
 ## Functional improvements
 
-* \<none>
+* [ ] C extension backend (vendored **p99**) with pure-Ruby fallback;
 
 
 ## Performance improvements
@@ -13,7 +13,7 @@
 
 ## Packaging improvements
 
-* \<none>
+* [ ] Optional precompiled platform gems for the C extension;
 
 
 <!-- ########################### end of file ########################### -->
