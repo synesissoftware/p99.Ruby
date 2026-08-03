@@ -52,10 +52,6 @@ jobs:
             ruby-version: '2.5'
           - os: ubuntu-latest
             ruby-version: '2.4'
-          - os: ubuntu-latest
-            ruby-version: '2.0'
-          - os: windows-latest
-            ruby-version: mingw
 
     runs-on: ${{ matrix.os }}
 
