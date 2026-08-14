@@ -50,7 +50,7 @@ require 'p99'
 
 ## Components
 
-T.B.C.
+**p99.Ruby** currently ships the **`P99`** root module and version metadata (`require 'p99'`). The low-overhead logarithmic histogram / percentile query surface present in the sibling **p99** libraries (fixed-size buckets, push duration, query p50 / p90 / p99 / …) is not yet implemented in this Ruby tree; see the **Related projects** links for the mature C and other-language APIs this gem is intended to mirror.
 
 
 ## Project Information
