@@ -7,7 +7,7 @@
 
 #
 # Created: 4th August 2026
-# Updated: 4th August 2026
+# Updated: 15th August 2026
 #
 
 name: Ruby
@@ -15,15 +15,21 @@ name: Ruby
 on:
   push:
     branches:
-      - "master"
-      - "dev"
-      - "gha"
-      - 0_0_0
+      - master
+      - dev
       - boilerplate
+      - idiomatic
+      - rc1
+      - rc2
+      - rc3
   pull_request:
 
 permissions:
   contents: read
+
+defaults:
+  run:
+    shell: bash
 
 jobs:
   test:
@@ -52,6 +58,10 @@ jobs:
             ruby-version: '2.5'
           - os: ubuntu-latest
             ruby-version: '2.4'
+          - os: ubuntu-latest
+            ruby-version: '2.0'
+          - os: windows-latest
+            ruby-version: mingw
 
     runs-on: ${{ matrix.os }}
 
