@@ -1,6 +1,11 @@
 # p99.Ruby - Changes <!-- omit in toc -->
 
 
+## 0.0.1 - 15th August 2026
+
+T.B.C.
+
+
 ## 0.0.0 - 4th August 2026
 
 * initial project scaffolding;
