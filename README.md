@@ -2,7 +2,6 @@
 
 Low-cost generation of performance percentiles (p50, p90, p99, p99.9, etc.), for Ruby
 
-
 ![Language](https://img.shields.io/badge/Ruby-CC342D?style=flat&logo=ruby&logoColor=white)
 [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![GitHub release](https://img.shields.io/github/v/release/synesissoftware/p99.Ruby.svg)](https://github.com/synesissoftware/p99.Ruby/releases/latest)
