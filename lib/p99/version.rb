@@ -1,11 +1,11 @@
-
+# frozen_string_literal: true
 # ######################################################################## #
 # File:     p99/version.rb
 #
 # Purpose:  Version for p99.Ruby library
 #
 # Created:  4th August 2026
-# Updated:  4th August 2026
+# Updated:  15th August 2026
 #
 # Home:     http://github.com/synesissoftware/p99.Ruby
 #
@@ -50,7 +50,7 @@
 module P99
 
   # Current version of the p99.Ruby library
-  VERSION           = '0.0.0'
+  VERSION           = '0.0.1'
 
   private
   # @!visibility private
