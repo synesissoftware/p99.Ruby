@@ -1,5 +1,5 @@
 # ######################################################################### #
-# File:     p99.gemspec
+# File:     p99-runy.gemspec
 #
 # Purpose:  Gemspec for p99.Ruby library
 #
