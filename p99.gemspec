@@ -14,6 +14,9 @@ $:.unshift File.join(File.dirname(__FILE__), 'lib')
 require 'p99/version'
 
 
+PROJECT_URL = 'https://github.com/synesissoftware/p99.Ruby'
+
+
 Gem::Specification.new do |spec|
 
   spec.name         = 'p99-ruby'
@@ -31,21 +34,26 @@ END_DESC
   spec.email        = [
     'matthew@synesis.com.au',
   ]
-  spec.homepage     = 'https://github.com/synesissoftware/p99.Ruby'
+  spec.homepage     = PROJECT_URL
   spec.license      = 'BSD-3-Clause'
 
-  spec.required_ruby_version = [ '>= 2.0', '< 4' ]
+  spec.required_ruby_version = [ '>= 2.0', '< 5' ]
 
   spec.metadata = {
-    'bug_tracker_uri' => 'https://github.com/synesissoftware/p99.Ruby/issues',
-    'changelog_uri' => 'https://github.com/synesissoftware/p99.Ruby/blob/master/CHANGES.md',
-    'homepage_uri' => 'https://github.com/synesissoftware/p99.Ruby',
-    'source_code_uri' => 'https://github.com/synesissoftware/p99.Ruby',
+    'bug_tracker_uri' => "#{PROJECT_URL}/issues",
+    'changelog_uri' => "#{PROJECT_URL}/blob/master/CHANGES.md",
+    'homepage_uri' => PROJECT_URL,
+    'source_code_uri' => PROJECT_URL,
   }
 
-  spec.files        = Dir[ 'Rakefile', '{bin,examples,lib,man,spec,test}/**/*', 'README*', 'LICENSE*' ] & `git ls-files -z`.split("\0")
+  spec.add_development_dependency "xqsr3", [ '>= 0.39.10', '< 1' ]
 
-  spec.add_development_dependency "xqsr3", [ '>= 0.39.5', '< 1.0' ]
+  spec.files        = Dir[
+    'Rakefile',
+    '{bin,examples,lib,man,spec,test}/**/*',
+    'LICENSE*',
+    'README*',
+  ] & `git ls-files -z`.split("\0")
 end
 
 
