@@ -5,7 +5,7 @@
 # Purpose:  Version for p99.Ruby library
 #
 # Created:  4th August 2026
-# Updated:  15th August 2026
+# Updated:  28th August 2026
 #
 # Home:     http://github.com/synesissoftware/p99.Ruby
 #

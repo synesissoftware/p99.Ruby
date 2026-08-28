@@ -4,7 +4,7 @@
 # Purpose:  Gemspec for p99.Ruby library
 #
 # Created:  4th August 2026
-# Updated:  15th August 2026
+# Updated:  28th August 2026
 #
 # ######################################################################### #
 
