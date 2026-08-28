@@ -37,7 +37,7 @@ END_DESC
   spec.homepage     = PROJECT_URL
   spec.license      = 'BSD-3-Clause'
 
-  spec.required_ruby_version = [ '>= 2.0', '< 4' ]
+  spec.required_ruby_version = [ '>= 2.0', '< 5' ]
 
   spec.metadata = {
     'bug_tracker_uri' => "#{PROJECT_URL}/issues",
@@ -46,9 +46,14 @@ END_DESC
     'source_code_uri' => PROJECT_URL,
   }
 
-  spec.files        = Dir[ 'Rakefile', '{bin,examples,lib,man,spec,test}/**/*', 'README*', 'LICENSE*' ] & `git ls-files -z`.split("\0")
+  spec.add_development_dependency "xqsr3", [ '>= 0.39.10', '< 1' ]
 
-  spec.add_development_dependency "xqsr3", [ '>= 0.39.5', '< 1.0' ]
+  spec.files        = Dir[
+    'Rakefile',
+    '{bin,examples,lib,man,spec,test}/**/*',
+    'LICENSE*',
+    'README*',
+  ] & `git ls-files -z`.split("\0")
 end
 
 
