@@ -51,9 +51,22 @@ END_DESC
   spec.files        = Dir[
     'Rakefile',
     '{bin,examples,lib,man,spec,test}/**/*',
+    'AUTHORS*',
+    'CHANGES*',
+    'CONTRIBUTING*',
+    'EXAMPLES*',
+    'FAQ*',
+    'INSTALL*',
     'LICENSE*',
+    'NEWS*',
     'README*',
+    'SECURITY*',
+    'TODO*',
   ] & `git ls-files -z`.split("\0")
+  spec.files -= [
+    '.ruby-version',
+    'Gemfile.lock',
+  ]
 end
 
 

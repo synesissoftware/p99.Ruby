@@ -32,6 +32,8 @@
 .ruby-version
 .rvmrc
 
+Gemfile.lock
+
 /spec/examples.txt
 
 # files (by pattern)
