@@ -1,4 +1,4 @@
-# **p99.Ruby** Examples <!-- omit in toc -->
+# p99.Ruby Examples <!-- omit in toc -->
 
 | Name | Source & Description | Summary |
 | --- | --- | --- |
