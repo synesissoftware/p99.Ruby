@@ -39,6 +39,8 @@ END_DESC
 
   spec.required_ruby_version = [ '>= 2.0', '< 5' ]
 
+  spec.add_development_dependency "xqsr3", [ '>= 0.39.10', '< 1' ]
+
   spec.metadata = {
     'bug_tracker_uri' => "#{PROJECT_URL}/issues",
     'changelog_uri' => "#{PROJECT_URL}/blob/master/CHANGES.md",
@@ -46,14 +48,25 @@ END_DESC
     'source_code_uri' => PROJECT_URL,
   }
 
-  spec.add_development_dependency "xqsr3", [ '>= 0.39.10', '< 1' ]
-
   spec.files        = Dir[
     'Rakefile',
     '{bin,examples,lib,man,spec,test}/**/*',
+    'AUTHORS*',
+    'CHANGES*',
+    'CONTRIBUTING*',
+    'EXAMPLES*',
+    'FAQ*',
+    'INSTALL*',
     'LICENSE*',
+    'NEWS*',
     'README*',
+    'SECURITY*',
+    'TODO*',
   ] & `git ls-files -z`.split("\0")
+  spec.files -= [
+    '.ruby-version',
+    'Gemfile.lock',
+  ]
 end
 
 
