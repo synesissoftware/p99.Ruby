@@ -5,7 +5,7 @@
 # Purpose:  Pure-Ruby Histogram implementation for p99.Ruby
 #
 # Created:  4th August 2026
-# Updated:  4th August 2026
+# Updated:  30th August 2026
 #
 # Home:     http://github.com/synesissoftware/p99.Ruby
 #
@@ -57,7 +57,8 @@ module P99
 
   # Calculates the bucket index for a duration in nanoseconds.
   #
-  # @param time_in_ns [Integer]
+  # @param time_in_ns [Integer];
+    #
   # @return [Integer]
   def self.bucket_index(time_in_ns)
 
@@ -70,7 +71,8 @@ module P99
 
   # Attempts to obtain the inclusive nanosecond range for +index+.
   #
-  # @param index [Integer]
+  # @param index [Integer];
+  #
   # @return [Array(Integer, Integer), nil] +[lower, upper]+, or +nil+ if
   #   +index+ is out of range
   def self.bucket_range(index)
@@ -112,7 +114,8 @@ module P99
 
     # Records an event duration in nanoseconds.
     #
-    # @param time_in_ns [Integer]
+    # @param time_in_ns [Integer];
+    #
     # @return [Boolean] +true+ on success; +false+ if overflow has already
     #   occurred or the running total would overflow
     def push_event_time_ns(time_in_ns)
@@ -132,7 +135,8 @@ module P99
 
     # Records an event duration in microseconds.
     #
-    # @param time_in_us [Integer]
+    # @param time_in_us [Integer];
+    #
     # @return [Boolean]
     def push_event_time_us(time_in_us)
 
@@ -170,7 +174,8 @@ module P99
 
     # Records an event duration in seconds.
     #
-    # @param time_in_s [Integer]
+    # @param time_in_s [Integer];
+    #
     # @return [Boolean]
     def push_event_time_s(time_in_s)
 
@@ -240,7 +245,8 @@ module P99
 
     # Count of events in bucket +index+, or +nil+ if out of range.
     #
-    # @param index [Integer]
+    # @param index [Integer];
+    #
     # @return [Integer, nil]
     def bucket_value(index)
 
@@ -263,7 +269,8 @@ module P99
     #
     # +percentile+ is clamped to +[0.0, 100.0]+.
     #
-    # @param percentile [Numeric]
+    # @param percentile [Numeric];
+    #
     # @return [Integer, nil] +nil+ if the histogram is empty
     def value_at_percentile(percentile)
 
@@ -379,7 +386,8 @@ module P99
 
     # Approximated durations at multiple floating-point percentiles.
     #
-    # @param levels [Array<Numeric>]
+    # @param levels [Array<Numeric>];
+    #
     # @return [Array<Array(Numeric, Integer)>, nil] +nil+ if empty; otherwise
     #   an array of +[level, value]+ pairs
     def values_at_percentiles(levels)
