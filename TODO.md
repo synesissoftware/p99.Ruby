@@ -13,7 +13,7 @@
 
 ## Packaging improvements
 
-* [ ] Rename gemspec so the filename stem matches `spec.name` (`p99.gemspec` → **p99-ruby.gemspec**);
+* [x] Rename gemspec so the filename stem matches `spec.name` (`p99.gemspec` → **p99-ruby.gemspec**);
 
 
 <!-- ########################### end of file ########################### -->
