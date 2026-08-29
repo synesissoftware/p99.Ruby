@@ -1,10 +1,10 @@
 # ######################################################################### #
-# File:     p99.gemspec
+# File:     p99-ruby.gemspec
 #
 # Purpose:  Gemspec for p99.Ruby library
 #
 # Created:  4th August 2026
-# Updated:  28th August 2026
+# Updated:  30th August 2026
 #
 # ######################################################################### #
 
