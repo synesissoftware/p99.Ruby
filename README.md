@@ -62,6 +62,11 @@ and beyond).
 This release provides a **pure-Ruby** implementation. A C-extension backend
 (with automatic fallback) is planned.
 
+See the [Histogram component guide](./docs/components/histogram.md) for
+loading, recording, statistics, percentile, and backend details. The
+[generated API reference](./docs/reference/README.md) provides the complete
+source-level method documentation.
+
 ```Ruby
 require 'p99'
 
