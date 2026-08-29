@@ -91,6 +91,9 @@ module P99
   # interpolation within buckets.
   class Histogram
 
+    # Constructs an empty histogram.
+    #
+    # @return [Histogram] a newly constructed histogram
     def initialize
 
       clear
