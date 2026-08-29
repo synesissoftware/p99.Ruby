@@ -621,8 +621,17 @@ module P99
 
     def floor_log2_u64_(value)
 
-      # Integer#bit_length is available from Ruby 2.1; CI covers 2.4+.
-      value.bit_length - 1
+      return value.bit_length - 1 if value.respond_to?(:bit_length)
+
+      result = -1
+
+      while value > 0
+
+        value >>= 1
+        result += 1
+      end
+
+      result
     end
 
     def bucket_range_(index)
