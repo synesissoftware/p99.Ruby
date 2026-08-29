@@ -67,6 +67,9 @@ loading, recording, statistics, percentile, and backend details. The
 [generated API reference](./docs/reference/README.md) provides the complete
 source-level method documentation.
 
+The [task-oriented guides](./docs/guides/README.md) provide practical
+workflows for recording and reading percentiles.
+
 ```Ruby
 require 'p99'
 
