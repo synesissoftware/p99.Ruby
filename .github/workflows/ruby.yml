@@ -7,7 +7,7 @@
 
 #
 # Created: 4th August 2026
-# Updated: 28th August 2026
+# Updated: 30th August 2026
 #
 
 name: Ruby
@@ -87,7 +87,7 @@ jobs:
     - name: Gem build and install smoke
       shell: bash
       run: |
-        gem build p99.gemspec
+        gem build p99-ruby.gemspec
         gem install --local p99-ruby-*.gem
         ruby -e "require 'p99/version'; abort('VERSION missing') unless defined?(P99::VERSION); puts P99::VERSION"
 
