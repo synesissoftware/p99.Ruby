@@ -1,11 +1,12 @@
 # directories (by name)
 
-/.bzr/
 /.bundle/
+/.bzr/
 /.config/
 /.svn/
 /.yardoc/
 
+/_build/
 /_yardoc/
 
 /InstalledFiles/
@@ -23,7 +24,9 @@
 /tmp/
 /vendor/bundle/
 
+
 # directories (by pattern)
+
 
 # files (by name)
 
@@ -35,6 +38,7 @@
 Gemfile.lock
 
 /spec/examples.txt
+
 
 # files (by pattern)
 

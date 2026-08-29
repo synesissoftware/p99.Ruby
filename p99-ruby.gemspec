@@ -39,14 +39,14 @@ END_DESC
 
   spec.required_ruby_version = [ '>= 2.0', '< 5' ]
 
+  spec.add_development_dependency "xqsr3", [ '>= 0.39.10', '< 1' ]
+
   spec.metadata = {
     'bug_tracker_uri' => "#{PROJECT_URL}/issues",
     'changelog_uri' => "#{PROJECT_URL}/blob/master/CHANGES.md",
     'homepage_uri' => PROJECT_URL,
     'source_code_uri' => PROJECT_URL,
   }
-
-  spec.add_development_dependency "xqsr3", [ '>= 0.39.10', '< 1' ]
 
   spec.files        = Dir[
     'Rakefile',
