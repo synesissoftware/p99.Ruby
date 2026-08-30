@@ -43,6 +43,8 @@ histogram.push_event_time_s(1)
 All recorded durations are converted to nanoseconds. Each `push_event_time_*`
 method returns `true` when the duration is accepted and `false` when it cannot
 be recorded.
+Pass an integer in the selected unit; fractional values are truncated during
+conversion.
 
 Use `clear` to reset the histogram:
 
