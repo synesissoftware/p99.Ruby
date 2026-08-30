@@ -32,6 +32,26 @@ defaults:
     shell: bash
 
 jobs:
+
+  documentation:
+
+    name: Documentation
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checking out code
+      uses: actions/checkout@v7
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.4'
+        bundler-cache: false
+
+    - name: Generate RDoc coverage report
+      run: ./generate_rdoc.sh --coverage-report
+
   test:
 
     strategy:

@@ -3,7 +3,7 @@
 
 ## Functional improvements
 
-* \<none>
+* [ ] C extension backend (vendored **p99**) with pure-Ruby fallback;
 
 
 ## Performance improvements
@@ -13,6 +13,7 @@
 
 ## Packaging improvements
 
+* [ ] Optional precompiled platform gems for the C extension;
 * [x] Rename gemspec so the filename stem matches `spec.name` (`p99.gemspec` → **p99-ruby.gemspec**);
 
 
