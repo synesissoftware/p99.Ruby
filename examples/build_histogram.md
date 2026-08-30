@@ -26,4 +26,32 @@ P99_TRIES=1000 ruby examples/build_histogram.rb
 ```
 
 
+## Representative output
+
+The timing values vary by machine and scheduler. A short run produces output
+like:
+
+```text
+Running Histogram example with 3 tries...
+(backend: ruby)
+
+Histogram summary:
+Histogram{
+  implementation:   ruby
+  event_count:      3
+  event_time_total: 1713000
+  has_overflowed:   false
+  min_event_time:   319000
+  max_event_time:   782000
+  buckets:          {18: 1, 19: 2}
+}
+
+Percentiles (approximated):
+  p50 (f64):         655360 ns
+  p50 (integer):     524287 ns
+  p75 (integer):     782000 ns
+  p99 (integer):     782000 ns
+```
+
+
 <!-- ########################### end of file ########################### -->

@@ -27,4 +27,28 @@ P99_TRIES=1000 ruby examples/measure_batch_latency.rb
 ```
 
 
+## Representative output
+
+The timing values vary by machine and scheduler. A short run produces output
+like:
+
+```text
+Measuring 3 batch operations...
+  batch 1: 3 items
+  batch 2: 2 items
+  batch 3: 2 items
+
+Batch count: 3
+Backend: ruby
+Min latency: 258000 ns
+Max latency: 398000 ns
+
+Approximate percentiles:
+  p50: 258000 ns
+  p75: 262143 ns
+  p90: 262143 ns
+  p99: 262143 ns
+```
+
+
 <!-- ########################### end of file ########################### -->
