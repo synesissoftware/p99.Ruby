@@ -51,7 +51,7 @@ END_DESC
 
   spec.files        = Dir[
     'Rakefile',
-    '{bin,examples,lib,man,spec,test}/**/*',
+    '{bin,docs,examples,lib,man,spec,test}/**/*',
     'AUTHORS*',
     'CHANGES*',
     'CONTRIBUTING*',
