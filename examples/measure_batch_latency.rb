@@ -1,10 +1,10 @@
-# frozen_string_literal: true
+#! /usr/bin/env ruby
 # ######################################################################## #
-# File:     p99/version.rb
+# File:     examples/measure_batch_latency.rb
 #
-# Purpose:  Version for p99.Ruby library
+# Purpose:  Example illustrating batch latency measurement
 #
-# Created:  4th August 2026
+# Created:  30th August 2026
 # Updated:  30th August 2026
 #
 # Home:     http://github.com/synesissoftware/p99.Ruby
@@ -34,7 +34,7 @@
 # THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
 # PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
 # CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
-# EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, THE
 # PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
 # PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
 # LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
@@ -44,25 +44,44 @@
 # ######################################################################## #
 
 
-=begin
-=end
+$:.unshift File.join(File.dirname(__FILE__), '..', 'lib')
 
-module P99
+require 'p99'
 
-  # Current version of the p99.Ruby library
-  VERSION           = '0.1.0'
 
-  private
-  # @!visibility private
-  VERSION_PARTS_    = VERSION.split(/[.]/).collect { |n| n.to_i } # :nodoc:
-  public
-  # Major version of the p99.Ruby library
-  VERSION_MAJOR     = VERSION_PARTS_[0] # :nodoc:
-  # Minor version of the p99.Ruby library
-  VERSION_MINOR     = VERSION_PARTS_[1] # :nodoc:
-  # Revision version of the p99.Ruby library
-  VERSION_REVISION  = VERSION_PARTS_[2] # :nodoc:
-end # module P99
+tries = Integer(ENV.fetch('P99_TRIES', 20))
+rng = Random.new(12_345)
+histogram = P99::Histogram.new
+
+puts "Measuring #{tries} batch operations..."
+
+tries.times do |index|
+
+  batch_size = rng.rand(1..4)
+  start_ns = Process.clock_gettime(Process::CLOCK_MONOTONIC, :nanosecond)
+
+  sleep(batch_size / 10_000.0)
+
+  elapsed_ns = Process.clock_gettime(
+    Process::CLOCK_MONOTONIC,
+    :nanosecond,
+  ) - start_ns
+  histogram.push_event_time_ns(elapsed_ns)
+
+  puts "  batch #{index + 1}: #{batch_size} items"
+end
+
+puts
+puts "Batch count: #{histogram.event_count}"
+puts "Backend: #{P99::IMPLEMENTATION}"
+puts "Min latency: #{histogram.min_event_time} ns"
+puts "Max latency: #{histogram.max_event_time} ns"
+puts
+puts 'Approximate percentiles:'
+histogram.fixed_percentiles.each do |label, value|
+
+  puts "  #{label}: #{value} ns"
+end
 
 
 # ############################## end of file ############################# #
